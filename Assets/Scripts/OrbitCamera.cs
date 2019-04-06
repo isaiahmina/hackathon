@@ -21,7 +21,10 @@ public class OrbitCamera : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-
+        _rotY -= Input.GetAxis("Horizontal") * rotspeed;
+        Quaternion rotation = Quaternion.Euler(0, _rotY, 0);
+        transform.position = target.position - (rotation * _offset);
+        transform.LookAt(target);
 
 
 
@@ -41,4 +44,5 @@ public class OrbitCamera : MonoBehaviour
         transform.LookAt(target);
     }
     */
+    }
 }
