@@ -39,6 +39,8 @@ public class OrbitCamera : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0, _rotY, 0);
         transform.position = target.position - (rotation * _offset);
         transform.LookAt(target);
-    }
+    
     */
+    }
 }
+
