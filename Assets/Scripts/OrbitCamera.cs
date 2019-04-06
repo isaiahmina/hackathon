@@ -21,6 +21,11 @@ public class OrbitCamera : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+
+
+
+
+        /*
         float horInput = Input.GetAxis("Horizontal");
         if (horInput != 0)
         {
@@ -35,4 +40,5 @@ public class OrbitCamera : MonoBehaviour
         transform.position = target.position - (rotation * _offset);
         transform.LookAt(target);
     }
+    */
 }
