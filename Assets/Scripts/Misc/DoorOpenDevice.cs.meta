@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Misc/DoorOpenDevice.cs.meta
 guid: 2c0de5fc1d90ed54886f8b2639febe1f
+=======
+guid: dd06d679c669f0640bfa2b8ea60144f1
+>>>>>>> e6a28268b0dae8e75eaaf28a9a0922885ca2520d:Assets/Scripts/Misc/DoorOpenDevice.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
