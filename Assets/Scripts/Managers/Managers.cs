@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerManager))]
-
+[RequireComponent(typeof(AudioManager))]
 
 public class Managers : MonoBehaviour
 {
     public static PlayerManager Player { get; private set; }
+    public static AudioManager Audio { get; private set; }
     
     private List<IGameManager> _startSequence;
 
     private void Awake()
     {
         Player = GetComponent<PlayerManager>();
-       
+        
 
         _startSequence = new List<IGameManager>();
         _startSequence.Add(Player);
