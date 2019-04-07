@@ -16,9 +16,9 @@ public class ReactiveTarget : MonoBehaviour
 
     private IEnumerator Die()
     {
-        //this.transform.Rotate(-75, 0, 0);
+        
 
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(0.00001f);
 
         Destroy(this.gameObject);
     }

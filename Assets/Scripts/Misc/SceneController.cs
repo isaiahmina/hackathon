@@ -17,8 +17,7 @@ public class SceneController: MonoBehaviour
             float ranX = Random.Range(-10,10);
             float ranY = Random.Range(-10,10);
             _enemy.transform.position = new Vector3(ranX, ranY, -0.1f);
-            float angle = Random.Range(0, 360);
-            _enemy.transform.Rotate(0, angle, 0);
+            
 
         }
 

@@ -5,58 +5,61 @@ using UnityEngine.EventSystems;
 
 public class RayShooter : MonoBehaviour
 {
+    [SerializeField] private GameObject Allyshot;
     [SerializeField] private AudioSource soundSource;
     [SerializeField] private AudioClip hitWallSound;
     [SerializeField] private AudioClip hitEnemySound;
-    private Camera _camera;
+    
+    public ReactiveTarget target;
+    private Transform PlayerPos;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        _camera = GetComponent<Camera>();        
-    }
-
-    private void OnGUI()
-    {
-        int size = 12;
-        float posX = _camera.pixelWidth / 2 - size / 4;
-        float posY = _camera.pixelHeight / 2 - size / 2;
-        GUI.Label(new Rect(posX, posY, size, size), "*");
+        GameObject hitObject = transform.gameObject;
+        target = hitObject.GetComponent<ReactiveTarget>();
+        PlayerPos = GetComponent<Transform>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        float inputX = Input.GetAxis("Mouse X");
+        float inputY = Input.GetAxis("Mouse Y");
+
+        if (Input.GetMouseButtonDown(0) /*&& !EventSystem.current.IsPointerOverGameObject()*/)
         {
-            Vector3 point = new Vector3(_camera.pixelWidth / 2, _camera.pixelHeight / 2, 0);
-            Ray ray = _camera.ScreenPointToRay(point);
-            RaycastHit hit;
-            if(Physics.Raycast(ray, out hit))
-            {
-                GameObject hitObject = hit.transform.gameObject;
-                ReactiveTarget target = hitObject.GetComponent<ReactiveTarget>();
-                if (target != null)
+
+            Vector2 point = new Vector2(inputX, inputY);
+            
+            
+            Fireball ball = GetComponent<Fireball>();
+            transform.Translate(inputX,inputY,0);
+
+            StartCoroutine(Shoot());
+
+            if (target != null)
                 {
                     target.ReactToHit();
                     soundSource.PlayOneShot(hitEnemySound);
                 }
-                else
+            else
                 {
-                    StartCoroutine(SphereIndicator(hit.point));
                     soundSource.PlayOneShot(hitWallSound);
                 }
-            }
+            
 
         }
     }
 
-    private IEnumerator SphereIndicator(Vector3 pos)
+    private IEnumerator Shoot()
     {
-        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-        sphere.transform.position = pos;
+        GameObject sphere = (GameObject)Instantiate (Allyshot, PlayerPos.position, Quaternion.identity);
+        
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1f);
 
         Destroy(sphere);
     }

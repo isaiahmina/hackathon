@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1512047476423754366}
   - component: {fileID: 7817714593664839376}
   - component: {fileID: 4819872856325377130}
+  - component: {fileID: 7578397931479374283}
+  - component: {fileID: 1340211610002467749}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -109,3 +111,49 @@ MonoBehaviour:
   obstacleRange: 5
   enemyshot: {fileID: 8189079034066414697, guid: fc34205d8799d574e850bb99f302b461,
     type: 3}
+--- !u!61 &7578397931479374283
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360445747857967250}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.48, y: 0.48}
+    newSize: {x: 0.48, y: 0.48}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.48, y: 0.48}
+  m_EdgeRadius: 0
+--- !u!114 &1340211610002467749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360445747857967250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e556b401773a5cf4db175ef8efcab20c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Allyshot: {fileID: 8189079034066414697, guid: fc34205d8799d574e850bb99f302b461,
+    type: 3}
+  soundSource: {fileID: 0}
+  hitWallSound: {fileID: 0}
+  hitEnemySound: {fileID: 0}
+  speed: 20
+  damage: 1
+  target: {fileID: 0}
