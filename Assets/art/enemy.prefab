@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5669460453461573712}
   - component: {fileID: 1512047476423754366}
+  - component: {fileID: 7817714593664839376}
+  - component: {fileID: 4819872856325377130}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -79,3 +81,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7817714593664839376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360445747857967250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15da22d03b969e6439ba83c87d83e65e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4819872856325377130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360445747857967250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16eb098622992c0458cafaa70f8edab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  obstacleRange: 5
+  enemyshot: {fileID: 8189079034066414697, guid: fc34205d8799d574e850bb99f302b461,
+    type: 3}
