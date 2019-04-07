@@ -24743,7 +24743,7 @@ GameObject:
   - component: {fileID: 446185740}
   - component: {fileID: 446185741}
   m_Layer: 0
-  m_Name: self
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24775,7 +24775,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 250
-  jumpForce: 12
 --- !u!114 &446185737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24976,7 +24975,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 446185739}
