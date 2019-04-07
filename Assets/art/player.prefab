@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1155439050412282546}
   - component: {fileID: 1155439050412282553}
   - component: {fileID: 1155439050412282552}
+  - component: {fileID: 7897462519523864333}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -156,3 +157,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.48, y: 0.48}
   m_EdgeRadius: 0
+--- !u!114 &7897462519523864333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1155439050412282547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e556b401773a5cf4db175ef8efcab20c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Allyshot: {fileID: 5302291940735330383, guid: 76c13e269306fdd4ebf9464840a9cea1,
+    type: 3}
+  soundSource: {fileID: 0}
+  hitWallSound: {fileID: 0}
+  hitEnemySound: {fileID: 0}
+  speed: 20
+  damage: 1
+  target: {fileID: 0}
