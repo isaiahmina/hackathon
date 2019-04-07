@@ -19,11 +19,15 @@ public class PlatformPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _body.rotation = 0;
         float deltaX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-        Vector2 movement = new Vector2(deltaX, _body.velocity.y);
+        float deltaY = Input.GetAxis("Vertical") * speed * Time.deltaTime;
+        Vector2 movement = new Vector2(deltaX, deltaY);
 
         _body.velocity = movement;
 
+
+        
         Vector3 max = _box.bounds.max;
         Vector3 min = _box.bounds.min;
         Vector3 corner1 = new Vector2(max.x, min.y - .1f);
@@ -45,7 +49,7 @@ public class PlatformPlayer : MonoBehaviour
             transform.parent = null;
         }
 
-        
+        /*
         Vector3 pScale = Vector3.one;
         if (platform != null)
         {
@@ -54,6 +58,6 @@ public class PlatformPlayer : MonoBehaviour
         if(deltaX!=0)
         {
             transform.localScale = new Vector3(.1f / pScale.x, .1f / pScale.y, .1f);
-        }
+        }*/
     }
 }
