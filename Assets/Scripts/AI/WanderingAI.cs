@@ -32,7 +32,7 @@ public class WanderingAI : MonoBehaviour
     {
         if (_alive)
         {
-            transform.Translate(0, 0, speed * Time.deltaTime);
+            transform.Translate(0, 0, 0);
         }
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
@@ -50,8 +50,8 @@ public class WanderingAI : MonoBehaviour
             }
             else if (hit.distance < obstacleRange)
             {
-                float angle = Random.Range(-110, 110);
-                transform.Rotate(0, angle, 0);
+                //float angle = Random.Range(-110, 110);
+                //transform.Rotate(0, angle, 0);
             }
         }
         
