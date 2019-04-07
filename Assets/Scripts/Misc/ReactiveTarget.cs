@@ -16,9 +16,7 @@ public class ReactiveTarget : MonoBehaviour
 
     private IEnumerator Die()
     {
-        
-
-        yield return new WaitForSeconds(0.00001f);
+        yield return new WaitForSeconds(.1f);
 
         Destroy(this.gameObject);
     }

@@ -34,10 +34,8 @@ public class WanderingAI : MonoBehaviour
         {
             transform.Translate(0, 0, 0);
         }
-        Ray ray = new Ray(transform.position, transform.forward);
-        RaycastHit hit;
 
-        if(Physics.SphereCast(ray, 0.5f, out hit))
+        /*if(Physics.SphereCast())
         {
             GameObject hitObject = hit.transform.gameObject;
             if (hitObject.GetComponent<PlayerCharacter>()) {
@@ -53,7 +51,7 @@ public class WanderingAI : MonoBehaviour
                 //float angle = Random.Range(-110, 110);
                 //transform.Rotate(0, angle, 0);
             }
-        }
+        }*/
         
     }
     private void OnSpeedChanged(float value)

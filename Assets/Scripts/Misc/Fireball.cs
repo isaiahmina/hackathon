@@ -17,6 +17,7 @@ public class Fireball : MonoBehaviour
     public ReactiveTarget target;
     private Transform PlayerPos;
 
+
     private void Start()
     {
         final = new Vector2(0.0f, 0.0f);
@@ -33,13 +34,13 @@ public class Fireball : MonoBehaviour
         Vector2 point = new Vector2();
         mousePos.x = currentEvent.mousePosition.x;
         mousePos.y = Camera.main.pixelHeight - currentEvent.mousePosition.y;
-        point = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 0.0f));
+        point = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, -0.1f));
 
         if (Input.GetMouseButtonDown(0))
         {
             StartCoroutine(Shoot());
             final = point;
-            if (target != null)
+            if (     .isAlongVector(point,mousePos))
             {
                 target.ReactToHit();
                 soundSource.PlayOneShot(hitEnemySound);
@@ -56,7 +57,6 @@ public class Fireball : MonoBehaviour
     {
         float inputX = Input.GetAxis("Mouse X");
         float inputY = Input.GetAxis("Mouse Y");
-        //transform.position = Vector2.MoveTowards(transform.position, final, speed * Time.deltaTime);
 
     }
     private void OnTriggerEnter(Collider other)
@@ -69,10 +69,18 @@ public class Fireball : MonoBehaviour
     private IEnumerator Shoot()
     {
         GameObject sphere = (GameObject)Instantiate(Allyshot, PlayerPos.position, Quaternion.identity);
-
+        
+        sphere.transform.position = Vector2.MoveTowards(transform.position, final, speed * Time.deltaTime);
 
         yield return new WaitForSeconds(1f);
 
         Destroy(sphere);
+    }
+    private bool isAlongVector(Vector2 A, Vector2 B)
+    {
+        if (-A.x + B.y + A.y * B.x == 0)
+            return true;
+        else
+            return false;
     }
 }
