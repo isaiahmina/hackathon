@@ -9,8 +9,8 @@ public class WanderingAI : MonoBehaviour
 
     public float obstacleRange = 5.0f;
     private bool _alive;
-    [SerializeField] private GameObject fireballPrefab;
-    private GameObject _fireball;
+    [SerializeField] private GameObject enemyshot;
+    private GameObject _enemyshot;
 
     public void Start()
     {
@@ -41,11 +41,11 @@ public class WanderingAI : MonoBehaviour
         {
             GameObject hitObject = hit.transform.gameObject;
             if (hitObject.GetComponent<PlayerCharacter>()) {
-                if (_fireball == null)
+                if (_enemyshot == null)
                 {
-                    _fireball = Instantiate(fireballPrefab) as GameObject;
-                    _fireball.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
-                    _fireball.transform.rotation = transform.rotation;
+                    _enemyshot = Instantiate(enemyshot) as GameObject;
+                    _enemyshot.transform.position = transform.TransformPoint(Vector3.forward * 1.5f);
+                    _enemyshot.transform.rotation = transform.rotation;
                 }
             }
             else if (hit.distance < obstacleRange)
