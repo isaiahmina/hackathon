@@ -11,12 +11,16 @@ public class PlayerManager : MonoBehaviour , IGameManager
 
     public void Startup()
     {
-        health = 50;
-        maxHealth = 100;
+        health = 3;
+        maxHealth = 5;
 
         status = ManagerStatus.Started;
     }
-
+    public void UpdateData(int health, int maxHleath)
+    {
+        this.health = health;
+        this.maxHealth = maxHealth;
+    }
     public void ChangeHealth(int value)
     {
         health += value;
@@ -28,5 +32,14 @@ public class PlayerManager : MonoBehaviour , IGameManager
         {
             health = 0;
         }
+        if(health == 0)
+        {
+            Messenger.Broadcast(GameEvent.LEVEL_FAILED);
+        }
+        Messenger.Broadcast(GameEvent.HEALTH_UPDATED);
+    }
+    public void Respawn()
+    {
+        UpdateData(50, 100);
     }
 }
