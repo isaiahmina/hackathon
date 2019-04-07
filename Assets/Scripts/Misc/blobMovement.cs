@@ -24,4 +24,15 @@ public class blobMovement : MonoBehaviour
         transform.Translate(0,0,speed*Time.deltaTime);
 
     }
+
+
+   /* private void onTriggerEnter(Collider other)
+    {
+        noWalkZone noWalk = other.GetComponent<noWalkZone>();
+        if( noWalk!= null)
+        {
+            speed = 0;
+            transform.Translate(0, 0, speed*Time.deltaTime);
+        }
+    }*/
 }
