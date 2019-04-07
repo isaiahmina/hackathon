@@ -5,16 +5,14 @@ using UnityEngine;
 public class PlatformPlayer : MonoBehaviour
 {
     public float speed = 250.0f;
-    public float jumpForce = 12.0f;
+    
 
     private Rigidbody2D _body;
-    private Animator _anim;
     private BoxCollider2D _box;
 
     void Start()
     {
         _body = GetComponent<Rigidbody2D>();
-        _anim = GetComponent<Animator>();
         _box = GetComponent<BoxCollider2D>();
     }
 
@@ -32,18 +30,7 @@ public class PlatformPlayer : MonoBehaviour
         Vector3 corner2 = new Vector2(max.x, min.y - .2f);
         Collider2D hit = Physics2D.OverlapArea(corner1, corner2);
 
-        bool grounded = false;
-
-        if(hit != null)
-        {
-            grounded = true;
-        }
-        _body.gravityScale = grounded && deltaX == 0 ? 0 : 1;
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
-        {
-            _body.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-
+        
         MovingPlatform platform = null;
         if (hit != null)
         {
@@ -58,7 +45,7 @@ public class PlatformPlayer : MonoBehaviour
             transform.parent = null;
         }
 
-        _anim.SetFloat("speed", Mathf.Abs(deltaX));
+        
         Vector3 pScale = Vector3.one;
         if (platform != null)
         {

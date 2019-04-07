@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/OrbitCamera.cs.meta
 guid: 82f28abe985f4b84b98fd5a276d526b0
+=======
+guid: 9ae3faf92371a4d43a7728c16d669b7d
+>>>>>>> e2891b36f7baa3eff5f0d780e0c1987902ad3256:Assets/Scripts/OrbitCamera.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
