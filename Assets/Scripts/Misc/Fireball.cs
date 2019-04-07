@@ -56,7 +56,7 @@ public class Fireball : MonoBehaviour
     {
         float inputX = Input.GetAxis("Mouse X");
         float inputY = Input.GetAxis("Mouse Y");
-        transform.position = Vector2.MoveTowards(transform.position, final, speed * Time.deltaTime);
+        //transform.position = Vector2.MoveTowards(transform.position, final, speed * Time.deltaTime);
 
     }
     private void OnTriggerEnter(Collider other)
