@@ -15,10 +15,13 @@ public class blobMovement : MonoBehaviour
 
     void Update()
     {
-        /*if(inside the '"don't move'" volume)
-         * return
-         * */
-         Vector2 dir = new Vector2(player.transform.position.x, player.transform.position.y);
+        /*if (collision)
+        {
+            if()
+        }*/
+        Vector2 dir = new Vector2(player.transform.position.x, player.transform.position.y);
+        transform.LookAt(dir);
+        transform.Translate(0,0,speed*Time.deltaTime);
 
     }
 }
