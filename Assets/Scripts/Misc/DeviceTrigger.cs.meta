@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Misc/DeviceTrigger.cs.meta
+guid: 4785c0a3efbd322408942d747615006a
+=======
 guid: 9f0fce598ea02d04ea18035b24edfdd4
+>>>>>>> e6a28268b0dae8e75eaaf28a9a0922885ca2520d:Assets/Scripts/Misc/DeviceTrigger.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
